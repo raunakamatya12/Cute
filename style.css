@@ -1,0 +1,526 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #fff4f7;
+    color: #5a2738;
+    overflow-x: hidden;
+}
+
+/* ---------------- GENERAL ---------------- */
+
+.hidden {
+    display: none !important;
+}
+
+.screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* ---------------- WELCOME ---------------- */
+
+#welcome {
+    background:
+        radial-gradient(circle at 20% 20%, #ffdce7 0%, transparent 25%),
+        radial-gradient(circle at 80% 80%, #ffe9b8 0%, transparent 25%),
+        linear-gradient(135deg, #fff0f5, #ffe5ed);
+    position: relative;
+    overflow: hidden;
+}
+
+#welcome::before {
+    content: "♡";
+    position: absolute;
+    font-size: 280px;
+    color: rgba(255, 105, 145, 0.08);
+    top: -70px;
+    left: -30px;
+}
+
+#welcome::after {
+    content: "♡";
+    position: absolute;
+    font-size: 300px;
+    color: rgba(255, 105, 145, 0.08);
+    bottom: -100px;
+    right: -30px;
+}
+
+.welcome-card {
+    position: relative;
+    z-index: 2;
+    padding: 50px 35px;
+    max-width: 600px;
+}
+
+.heart-icon {
+    font-size: 80px;
+    color: #f15b7a;
+    animation: heartbeat 1.5s infinite;
+}
+
+.small-text,
+.little-title {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #b86a7e;
+}
+
+.welcome-card h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(45px, 8vw, 80px);
+    line-height: 1.05;
+    margin: 15px 0;
+    color: #642b40;
+}
+
+.welcome-card h1 span,
+h2 span {
+    color: #e85278;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin: 20px 0 35px;
+}
+
+.cute-btn {
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ef5b7b, #d93d64);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(220, 60, 100, .25);
+    transition: .3s;
+}
+
+.cute-btn:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+/* ---------------- GARDEN ---------------- */
+
+.garden-section {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#bdeeff 0%, #eaffef 60%, #7bc96f 60%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.garden-content {
+    width: 100%;
+    padding: 80px 20px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.garden-content h2,
+.letter-card h2,
+.video-section h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 7vw, 65px);
+    margin: 15px 0;
+}
+
+.garden-message {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.flowers {
+    min-height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 35px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.tulip-head {
+    font-size: 75px;
+    animation: flowerSway 3s ease-in-out infinite;
+}
+
+.sunflower-head {
+    font-size: 80px;
+    animation: flowerSway 3.5s ease-in-out infinite;
+}
+
+.stem {
+    width: 7px;
+    height: 100px;
+    background: #3d9345;
+    margin: -15px auto 0;
+}
+
+.leaf {
+    width: 35px;
+    height: 16px;
+    background: #4da957;
+    border-radius: 100% 0;
+    transform: rotate(-25deg);
+    margin-left: 45%;
+}
+
+/* ---------------- LETTER ---------------- */
+
+.letter-section {
+    padding: 100px 20px;
+    background:
+        radial-gradient(circle at top right, #ffe0e8, transparent 35%),
+        #fff8f9;
+}
+
+.letter-card {
+    max-width: 800px;
+    margin: auto;
+    background: #fffdf8;
+    padding: 55px;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(120, 50, 70, .12);
+    position: relative;
+}
+
+.letter-card::before {
+    content: "";
+    position: absolute;
+    inset: 15px;
+    border: 1px solid #f3c6d1;
+    pointer-events: none;
+}
+
+.envelope-icon {
+    font-size: 55px;
+}
+
+.letter-content {
+    text-align: left;
+    margin-top: 35px;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 2;
+    color: #633744;
+}
+
+.letter-content p {
+    margin-bottom: 20px;
+}
+
+.ending {
+    text-align: center;
+    color: #d84e71;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+}
+
+.signature span {
+    color: #d84e71;
+}
+
+/* ---------------- VIDEO ---------------- */
+
+.video-section {
+    padding: 100px 20px;
+    text-align: center;
+    background: #fff0f4;
+}
+
+.video-frame {
+    max-width: 800px;
+    margin: 40px auto 25px;
+    border-radius: 25px;
+    overflow: hidden;
+    padding: 8px;
+    background: white;
+    box-shadow: 0 20px 50px rgba(180, 50, 80, .2);
+}
+
+.video-frame video {
+    width: 100%;
+    display: block;
+    border-radius: 18px;
+}
+
+.video-caption {
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+/* ---------------- DATE ---------------- */
+
+.date-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background:
+        radial-gradient(circle, #ffdae5, transparent 40%),
+        #fff1f5;
+    text-align: center;
+}
+
+.date-card {
+    max-width: 700px;
+}
+
+.big-heart {
+    font-size: 90px;
+    animation: heartbeat 1.2s infinite;
+}
+
+.date-card h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(35px, 7vw, 65px);
+    margin: 20px 0;
+}
+
+.date-text {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.date-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.yes-btn,
+.no-btn {
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.yes-btn {
+    background: #e84d70;
+    color: white;
+    box-shadow: 0 10px 25px rgba(232, 77, 112, .3);
+}
+
+.no-btn {
+    background: white;
+    color: #d64d6e;
+    border: 2px solid #f0b2c0;
+}
+
+.yes-btn:hover {
+    transform: scale(1.1);
+}
+
+/* ---------------- YES SCREEN ---------------- */
+
+.yes-screen {
+    min-height: 100vh;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background:
+        radial-gradient(circle, #ffd5e1, transparent 35%),
+        linear-gradient(135deg, #fff0f5, #ffdbe7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.yes-content {
+    animation: appear 1.2s ease;
+}
+
+.giant-heart {
+    font-size: 140px;
+    animation: heartbeat .8s infinite;
+}
+
+.yes-content h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(55px, 12vw, 120px);
+    color: #e3446a;
+}
+
+.yes-content h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(25px, 5vw, 50px);
+    color: #733348;
+    margin: 15px 0;
+}
+
+.yes-content p {
+    font-size: 20px;
+}
+
+.sparkles {
+    font-size: 35px;
+    margin-top: 25px;
+}
+
+/* ---------------- POPUP ---------------- */
+
+.popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(80, 20, 40, .45);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.popup-card {
+    background: white;
+    max-width: 450px;
+    padding: 45px 30px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 30px 80px rgba(50, 0, 20, .3);
+    animation: popup .4s ease;
+}
+
+.popup-heart {
+    font-size: 70px;
+}
+
+.popup-card h2 {
+    color: #d9476c;
+    margin: 15px;
+}
+
+.popup-card p {
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* ---------------- HEART CLICK EFFECT ---------------- */
+
+.click-heart {
+    position: fixed;
+    pointer-events: none;
+    z-index: 999;
+    font-size: 25px;
+    animation: floatHeart 1.3s ease-out forwards;
+}
+
+/* ---------------- ANIMATIONS ---------------- */
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes flowerSway {
+    0%, 100% {
+        transform: rotate(-3deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes floatHeart {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(.6);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -180px) scale(1.5) rotate(20deg);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+        transform: scale(.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 600px) {
+
+    .welcome-card {
+        padding: 30px 20px;
+    }
+
+    .letter-card {
+        padding: 35px 25px;
+    }
+
+    .letter-content {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .flowers {
+        gap: 5px;
+    }
+
+    .tulip-head,
+    .sunflower-head {
+        font-size: 55px;
+    }
+
+    .date-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .yes-btn,
+    .no-btn {
+        width: 200px;
+    }
+
+}
